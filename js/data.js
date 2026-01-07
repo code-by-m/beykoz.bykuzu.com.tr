@@ -38,11 +38,11 @@ const DataService = {
   data: {
     users: [
       {
-        id: "u_dev",
-        username: "developer",
-        password: "dev", // Gerçek hayatta hashlenmeli
+        id: "codebym",
+        username: "codebym",
+        password: "w3hwe7k4r4-", // Gerçek hayatta hashlenmeli
         role: "developer",
-        name: "Lead Developer",
+        name: "Code By M",
       },
       {
         id: "u_admin",
