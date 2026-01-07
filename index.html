@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gourmet | Geleneksel Lezzetler</title>
+
+    <!-- Meta Tags for SEO -->
+    <meta
+      name="description"
+      content="Geleneksel lezzetlerin modern sunumu. Denizli Kuzu Tandır ve eşsiz tatlar."
+    />
+
+    <!-- Fonts: Playfair Display (Titles) & Lato (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="css/style.css?v=2.3" />
+
+    <!-- Critical JS for Instant Splash Response -->
+    <script>
+      // Global fonksiyon: HTML butonlarından direkt çağrılır
+      window.selectLanguage = function (lang) {
+        // Hemen localStorage'a kaydet
+        localStorage.setItem("selectedLanguage", lang);
+
+        // Splash ekranını hemen gizle (CSS ile)
+        const splash = document.getElementById("lang-splash");
+        if (splash) {
+          // Scroll kaymasını önlemek için overflow hidden
+          document.body.style.overflow = "hidden";
+
+          splash.style.opacity = "0";
+          splash.style.pointerEvents = "none"; // Tıklamaları hemen engelle
+
+          setTimeout(() => {
+            splash.style.display = "none";
+            // Scroll'u serbest bırak
+            document.body.style.overflow = "";
+          }, 500);
+        }
+
+        // Ana içeriği göster (Eğer App.js henüz yüklenmediyse bu kısım App.js init olduğunda halledilecek)
+        // Eğer App.js yüklendiyse ve global App nesnesi varsa, dili ona da bildir
+        if (window.App && typeof window.App.setLanguage === "function") {
+          window.App.setLanguage(lang);
+          window.App.hideSplash(); // App.js içindeki hideSplash daha kapsamlı (render vs.)
+        } else {
+          // App.js henüz hazır değilse, body'e bir işaret koy
+          document.body.dataset.pendingLang = lang;
+        }
+      };
+    </script>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>"
+    />
+  </head>
+  <body>
+    <!-- Language Splash Screen -->
+    <div id="lang-splash">
+      <div class="splash-content">
+        <div class="splash-logo">
+          <span class="brand-prefix">by</span>
+          <span class="brand-name brand-main">Kuzu</span>
+        </div>
+        <p>Lütfen bir dil seçiniz / Please select a language</p>
+        <div class="splash-buttons">
+          <button
+            class="splash-btn"
+            onclick="selectLanguage('tr')"
+            data-lang="tr"
+          >
+            🇹🇷 TÜRKÇE
+          </button>
+          <button
+            class="splash-btn"
+            onclick="selectLanguage('en')"
+            data-lang="en"
+          >
+            🇬🇧 ENGLISH
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header id="main-header" style="display: none">
+      <div class="container header-inner">
+        <div class="logo">
+          <span class="brand-prefix">by</span>
+          <span class="brand-name brand-main">Kuzu</span>
+        </div>
+        <div class="header-controls">
+          <!-- Theme Toggle Button -->
+          <button
+            id="theme-toggle"
+            class="theme-toggle"
+            aria-label="Toggle Theme"
+          >
+            <span class="icon-sun">☀️</span>
+            <span class="icon-moon" style="display: none">🌙</span>
+          </button>
+          <div class="lang-switcher">
+            <!-- Header language switcher kept for switching later if needed -->
+            <button class="lang-toggle" data-lang="tr">TR</button>
+            <button class="lang-toggle" data-lang="en">EN</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section with Parallax Background -->
+    <section class="hero" style="display: none">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 id="welcome-title">Lezzet Dünyasına Hoşgeldiniz</h1>
+        <div class="divider"></div>
+        <p id="welcome-subtitle">Geleneksel lezzetlerin modern sunumu</p>
+      </div>
+    </section>
+
+    <main class="container main-content" style="display: none">
+      <!-- Menu Grid -->
+      <div id="menu-container">
+        <!-- JS will populate menu items here -->
+        <div class="loading-spinner"></div>
+      </div>
+    </main>
+
+    <!-- Main Footer -->
+    <footer id="main-footer" class="site-footer" style="display: none">
+      <!-- Footer content will be injected by JS -->
+    </footer>
+
+    <!-- Product Detail Modal -->
+    <div id="product-modal" class="product-modal">
+      <div class="product-modal-backdrop"></div>
+      <div class="product-modal-content">
+        <button class="product-modal-close" aria-label="Close">
+          <i class="bi bi-x-lg"></i>
+        </button>
+        <div class="product-modal-body">
+          <div class="product-modal-image-container">
+            <img src="" alt="Product Image" id="pm-image" />
+          </div>
+          <div class="product-modal-info">
+            <h2 id="pm-title"></h2>
+            <div class="product-modal-tags" id="pm-tags">
+              <!-- Tags will be injected here -->
+            </div>
+            <p class="product-modal-desc" id="pm-desc"></p>
+            <div class="product-modal-footer">
+              <div class="product-modal-price" id="pm-price"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main JS File -->
+    <script src="js/data.js?v=2.2"></script>
+    <script src="js/app.js?v=2.2"></script>
+  </body>
+</html>

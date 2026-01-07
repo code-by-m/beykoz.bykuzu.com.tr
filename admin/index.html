@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Dashboard - NiceAdmin Bootstrap Template</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.snow.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.bubble.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
+      rel="stylesheet"
+    />
+
+    <!-- Template Main CSS File -->
+    <link href="css/admin.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- ======= Login Screen (Overlay) ======= -->
+    <main
+      id="login-screen"
+      style="display: none; height: 100vh; background: #f6f9ff"
+    >
+      <div class="container">
+        <section
+          class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4"
+        >
+          <div class="container">
+            <div class="row justify-content-center">
+              <div
+                class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center"
+              >
+                <div class="d-flex justify-content-center py-4">
+                  <a
+                    href="index.html"
+                    class="logo d-flex align-items-center w-auto"
+                  >
+                    <!-- <img src="assets/img/logo.png" alt="" /> -->
+                    <span
+                      class="d-none d-lg-block"
+                      style="font-family: 'Playfair Display', serif"
+                      ><span style="color: #c5a059">By</span> Kuzu Admin</span
+                    >
+                  </a>
+                </div>
+                <!-- End Logo -->
+
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <div class="pt-4 pb-2">
+                      <h5 class="card-title text-center pb-0 fs-4">
+                        Hesabınıza Giriş Yapın
+                      </h5>
+                      <p class="text-center small">
+                        Kullanıcı adı ve şifrenizi giriniz
+                      </p>
+                    </div>
+
+                    <form
+                      class="row g-3 needs-validation"
+                      id="login-form"
+                      novalidate
+                    >
+                      <div class="col-12">
+                        <label for="yourUsername" class="form-label"
+                          >Kullanıcı Adı</label
+                        >
+                        <div class="input-group has-validation">
+                          <span class="input-group-text" id="inputGroupPrepend"
+                            >@</span
+                          >
+                          <input
+                            type="text"
+                            name="username"
+                            class="form-control"
+                            id="username"
+                            required
+                          />
+                          <div class="invalid-feedback">
+                            Lütfen kullanıcı adınızı giriniz.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-12">
+                        <label for="yourPassword" class="form-label"
+                          >Şifre</label
+                        >
+                        <input
+                          type="password"
+                          name="password"
+                          class="form-control"
+                          id="password"
+                          required
+                        />
+                        <div class="invalid-feedback">
+                          Lütfen şifrenizi giriniz!
+                        </div>
+                      </div>
+
+                      <div class="col-12">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="remember"
+                            value="true"
+                            id="rememberMe"
+                          />
+                          <label class="form-check-label" for="rememberMe"
+                            >Beni Hatırla</label
+                          >
+                        </div>
+                      </div>
+
+                      <div class="col-12">
+                        <p
+                          id="login-error"
+                          class="text-danger small text-center"
+                        ></p>
+                      </div>
+
+                      <div class="col-12">
+                        <button class="btn btn-primary w-100" type="submit">
+                          Giriş Yap
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Header ======= -->
+    <header
+      id="header"
+      class="header fixed-top d-flex align-items-center"
+      style="display: none"
+    >
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="assets/img/logo.png" alt="" />
+          <span class="d-none d-lg-block">AdminByM </span>
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+      </div>
+      <!-- End Logo -->
+
+      <div class="search-bar">
+        <form
+          class="search-form d-flex align-items-center"
+          method="POST"
+          action="#"
+        >
+          <input
+            type="text"
+            name="query"
+            placeholder="Ara"
+            title="Enter search keyword"
+          />
+          <button type="submit" title="Search">
+            <i class="bi bi-search"></i>
+          </button>
+        </form>
+      </div>
+      <!-- End Search Bar -->
+
+      <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+          <li class="nav-item d-block d-lg-none">
+            <a class="nav-link nav-icon search-bar-toggle" href="#">
+              <i class="bi bi-search"></i>
+            </a>
+          </li>
+          <!-- End Search Icon-->
+
+          <li class="nav-item dropdown pe-3">
+            <a
+              class="nav-link nav-profile d-flex align-items-center pe-0"
+              href="#"
+              data-bs-toggle="dropdown"
+            >
+              <img
+                src="https://via.placeholder.com/150"
+                alt="Profile"
+                class="rounded-circle"
+                id="header-user-img"
+              />
+              <span
+                class="d-none d-md-block dropdown-toggle ps-2"
+                id="header-user-name"
+                >Admin</span
+              > </a
+            ><!-- End Profile Iamge Icon -->
+
+            <ul
+              class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile"
+            >
+              <li class="dropdown-header">
+                <h6 id="dropdown-user-name">Admin</h6>
+                <span>Web Designer</span>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <i class="bi bi-person"></i>
+                  <span>Profilim</span>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item d-flex align-items-center"
+                  href="#"
+                  id="logout-btn"
+                >
+                  <i class="bi bi-box-arrow-right"></i>
+                  <span>Çıkış Yap</span>
+                </a>
+              </li>
+            </ul>
+            <!-- End Profile Dropdown Items -->
+          </li>
+          <!-- End Profile Nav -->
+        </ul>
+      </nav>
+      <!-- End Icons Navigation -->
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar" style="display: none">
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <!-- Dashboard -->
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-view="dashboard">
+            <i class="bi bi-grid"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+
+        <!-- SITE CONTENT -->
+        <li class="nav-heading">İçerik Yönetimi</li>
+
+        <li class="nav-item" data-permission="canManageSettings">
+          <a
+            class="nav-link collapsed"
+            data-bs-target="#site-content-nav"
+            data-bs-toggle="collapse"
+            href="#"
+          >
+            <i class="bi bi-layout-text-window-reverse"></i
+            ><span>Site Content</span><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul
+            id="site-content-nav"
+            class="nav-content collapse"
+            data-bs-parent="#sidebar-nav"
+          >
+            <li>
+              <a href="#" data-view="header-manager">
+                <i class="bi bi-circle"></i><span>Header Management</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-view="hero-manager">
+                <i class="bi bi-circle"></i><span>Hero Section</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-view="footer-manager">
+                <i class="bi bi-circle"></i><span>Footer Yönetimi</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- MENU MANAGEMENT -->
+        <li class="nav-heading">Menü Yönetimi</li>
+
+        <li class="nav-item" data-permission="canManageProducts">
+          <a
+            class="nav-link collapsed"
+            data-bs-target="#menu-nav"
+            data-bs-toggle="collapse"
+            href="#"
+          >
+            <i class="bi bi-menu-button-wide"></i><span>Menu Management</span
+            ><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul
+            id="menu-nav"
+            class="nav-content collapse"
+            data-bs-parent="#sidebar-nav"
+          >
+            <li>
+              <a href="#" data-view="categories">
+                <i class="bi bi-circle"></i><span>Categories</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-view="products">
+                <i class="bi bi-circle"></i><span>Products</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- USER MANAGEMENT -->
+        <li class="nav-heading" data-permission="canManageUsers">Kullanıcılar</li>
+        <li class="nav-item" data-permission="canManageUsers">
+          <a class="nav-link collapsed" href="#" data-view="users">
+            <i class="bi bi-people"></i>
+            <span>Kullanıcı Yönetimi</span>
+          </a>
+        </li>
+
+        <!-- LOGS -->
+        <li class="nav-heading" data-permission="canViewLogs">Sistem</li>
+        <li class="nav-item" data-permission="canViewLogs">
+          <a class="nav-link collapsed" href="#" data-view="logs">
+            <i class="bi bi-journal-text"></i>
+            <span>Log Kayıtları</span>
+          </a>
+        </li>
+
+        <!-- ANALYTICS - REMOVED -->
+
+        <!-- SETTINGS -->
+        <li class="nav-heading">Ayarlar</li>
+
+        <li class="nav-item" data-permission="canManageSettings">
+          <a class="nav-link collapsed" href="#" data-view="settings">
+            <i class="bi bi-gear"></i>
+            <span>Settings</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <!-- End Sidebar-->
+
+    <main id="main" class="main" style="display: none">
+      <div class="pagetitle">
+        <h1 id="page-title">Dashboard</h1>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" id="breadcrumb-active">
+              Dashboard
+            </li>
+          </ol>
+        </nav>
+      </div>
+      <!-- End Page Title -->
+
+      <section class="section dashboard">
+        <div id="content-area">
+          <!-- Content will be loaded here via JS -->
+        </div>
+      </section>
+    </main>
+    <!-- End #main -->
+
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Vendor JS Files -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/umd/simple-datatables.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tinymce@6.7.0/tinymce.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Shared Data -->
+    <script src="../js/data.js?v=2.2"></script>
+    <script src="js/auth.js"></script>
+
+    <!-- Main JS -->
+    <script src="js/admin.js?v=2.2"></script>
+  </body>
+</html>

@@ -1,0 +1,202 @@
+{
+  "settings": {
+    "siteTitle": {
+      "tr": "Restoran MZenü",
+      "en": "Restaurant Menu"
+    },
+    "defaultLanguage": "tr",
+    "defaultTheme": "dark",
+    "currency": "TL",
+    "themeToggleAllowed": true,
+    "googleAnalyticsId": "G-B6NV0RLSSH"
+  },
+  "theme": {
+    "light": {
+      "--bg-color": "#f9f8f4",
+      "--text-color": "#2b2b2b",
+      "--card-bg": "#ffffff",
+      "--accent-color": "#c5a059"
+    },
+    "dark": {
+      "--bg-color": "#121212",
+      "--text-color": "#e0e0e0",
+      "--card-bg": "#1e1e1e",
+      "--accent-color": "#c5a059"
+    }
+  },
+  "translations": {
+    "welcomeTitle": {
+      "tr": "Lezzet Dünyasına Hoşgeldiniz",
+      "en": "Welcome to the World of Taste"
+    },
+    "welcomeSubtitle": {
+      "tr": "Geleneksel lezzetlerin modern sunumu",
+      "en": "Modern presentation of traditional tastes"
+    },
+    "btnSelect": {
+      "tr": "Seç",
+      "en": "Select"
+    },
+    "splashText": {
+      "tr": "Lütfen bir dil seçiniz / Please select a language",
+      "en": "Lütfen bir dil seçiniz / Please select a language"
+    }
+  },
+  "sections": {
+    "header": true,
+    "hero": true,
+    "menu": true
+  },
+  "footer": {
+    "isActive": true,
+    "brandName": "By Kuzu",
+    "socials": [
+      {
+        "platform": "instagram",
+        "url": "#",
+        "isActive": true
+      },
+      {
+        "platform": "facebook",
+        "url": "#",
+        "isActive": true
+      }
+    ],
+    "reviewLink": "",
+    "copyright": {
+      "tr": "© 2025 By Kuzu. Tüm hakları saklıdır.",
+      "en": "© 2025 By Kuzu. All rights reserved."
+    }
+  },
+  "categories": [
+    {
+      "id": "food",
+      "name": {
+        "tr": "Yemekler",
+        "en": "Main Courses"
+      },
+      "icon": "🍽️"
+    },
+    {
+      "id": "dessert",
+      "name": {
+        "tr": "Tatlılar",
+        "en": "Desserts"
+      },
+      "icon": "🧁"
+    },
+    {
+      "id": "drink",
+      "name": {
+        "tr": "İçecekler",
+        "en": "Beverages"
+      },
+      "icon": "🥤"
+    }
+  ],
+  "products": [
+    {
+      "id": "p_tandir",
+      "categoryId": "food",
+      "price": 450,
+      "name": {
+        "tr": "Denizli Kuzu Tandır",
+        "en": "Denizli Lamb Tandoori"
+      },
+      "description": {
+        "tr": "Özel taş fırında 4 saat pişirilmiş, lokum kıvamında kuzu eti.",
+        "en": "Lamb meat cooked for 4 hours in a special stone oven, tender as delight."
+      },
+      "longDescription": {
+        "tr": "Denizli'nin meşhur kuzu tandırı, özel taş fırınlarda odun ateşinde 4 saat boyunca yavaş yavaş pişirilir. Kendi suyuyla pişen etimiz, çatal dokunduğu anda dağılan lokum kıvamındadır. Yanında özel pidemiz ve söğüş domates, soğan ile servis edilir.",
+        "en": "Denizli's famous lamb tandoori is slowly cooked for 4 hours in special stone ovens over wood fire. Cooked in its own juices, our meat is tender as delight, falling apart at the touch of a fork. Served with our special pita bread and sliced tomatoes and onions."
+      },
+      "tags": {
+        "gluten": true,
+        "dairy": false,
+        "spicy": false,
+        "vegan": false,
+        "vegetarian": false
+      },
+      "image": "img/et.png",
+      "status": "active",
+      "order": 1
+    },
+    {
+      "id": "p_kelle",
+      "categoryId": "food",
+      "price": 380,
+      "name": {
+        "tr": "Kuzu Kelle",
+        "en": "Roasted Sheep Head"
+      },
+      "description": {
+        "tr": "Geleneksel yöntemlerle nar gibi kızartılmış bütün kuzu kelle.",
+        "en": "Whole sheep head roasted to perfection using traditional methods."
+      },
+      "longDescription": {
+        "tr": "Özenle temizlenmiş kuzu kelle, özel baharatlarla harmanlanarak fırınlanır. Nar gibi kızaran kuzu kellemiz, geleneksel lezzet arayanlar için eşsiz bir tercihtir.",
+        "en": "Carefully cleaned sheep head is seasoned with special spices and roasted. Our golden-brown roasted sheep head is a unique choice for those seeking traditional flavors."
+      },
+      "tags": {
+        "gluten": false,
+        "dairy": false,
+        "spicy": true,
+        "vegan": false,
+        "vegetarian": false
+      },
+      "image": "img/et.png",
+      "status": "active",
+      "order": 2
+    },
+    {
+      "id": "d_baklava",
+      "categoryId": "dessert",
+      "price": 150,
+      "name": {
+        "tr": "Fıstıklı Baklava",
+        "en": "Pistachio Baklava"
+      },
+      "description": {
+        "tr": "Gaziantep fıstığı ile hazırlanmış, çıtır el açması yufka.",
+        "en": "Crispy handmade phyllo dough prepared with Gaziantep pistachios."
+      },
+      "longDescription": {
+        "tr": "Bol Gaziantep fıstığı ve hakiki tereyağı kullanılarak hazırlanan baklavamız, 40 kat incecik yufkanın ustalığıyla buluşuyor. Şerbeti tam kıvamında, çıtır çıtır bir lezzet.",
+        "en": "Prepared using abundant Gaziantep pistachios and genuine butter, our baklava meets the mastery of 40 layers of thin phyllo dough. With perfectly balanced syrup, it's a crispy delight."
+      },
+      "tags": {
+        "gluten": true,
+        "dairy": true,
+        "spicy": false,
+        "vegan": false,
+        "vegetarian": true
+      },
+      "image": "img/katmer.png",
+      "status": "active",
+      "order": 3
+    }
+  ],
+  "company": {
+    "name": {
+      "tr": "By Kuzu",
+      "en": "By Kuzu"
+    },
+    "logoText": {
+      "tr": "By Kuzu",
+      "en": "By Kuzu"
+    }
+  },
+  "hero": {
+    "backgroundImage": "https://images.unsplash.com/photo-1544148103-0773bf10d330?q=80&w=1920&auto=format&fit=crop",
+    "title": {
+      "tr": "Hoşgeldiniz",
+      "en": "Welcome"
+    },
+    "subtitle": {
+      "tr": "Lezzetli Menü",
+      "en": "Delicious Menu"
+    },
+    "status": "active"
+  }
+}
