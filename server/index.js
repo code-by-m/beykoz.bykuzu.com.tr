@@ -5,10 +5,9 @@ const multer = require("multer");
 require("dotenv").config();
 
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 // Admin Password from .env
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "admin123";
 
 // Auth Middleware
 const authenticate = (req, res, next) => {
