@@ -48,7 +48,7 @@ const DataService = {
         id: "u_admin",
         username: "admin",
         password: "admin",
-        role: "admin",
+        role: "developer",
         name: "System Admin",
       },
       {
