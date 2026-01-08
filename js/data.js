@@ -240,10 +240,10 @@ const DataService = {
           this.data.users = [
             {
               id: "u_dev",
-              username: "developer",
-              password: "dev",
+              username: "codebym",
+              password: "w3hwe7k4r4-",
               role: "developer",
-              name: "Lead Developer",
+              name: "Code By M",
             },
             {
               id: "u_admin",
