@@ -2,7 +2,7 @@
    MOBILE CACHE DATA FIX
    ================================ */
 (function () {
-  const DATA_VERSION = "1.0.9"; // ← BUNU ARTIR
+  const DATA_VERSION = "1.0.10"; // ← BUNU ARTIR
   const STORAGE_KEY = "__MENU_DATA_VERSION__";
 
   try {
@@ -32,7 +32,7 @@
 })();
 
 const DataService = {
-  apiUrl: "http://localhost:3000/api/data",
+  apiUrl: "/api/data",
 
   // Default fallback data (in case API is down)
   data: {
