@@ -367,9 +367,8 @@ const DataService = {
     }
 
     // Fallback to API (optional) or defaults
-    if (!localData) {
       try {
-        const response = await fetch(this.apiUrl);
+        const response = await fetch(this.apiUrl, { cache: "no-store" });
         if (response.ok) {
           const json = await response.json();
           if (json.success) {
@@ -381,7 +380,7 @@ const DataService = {
       } catch (error) {
         console.warn("Failed to load data from API, using defaults.", error);
       }
-    }
+    
     console.log("Data Service Initialized", this.data);
   },
 
