@@ -440,19 +440,20 @@ DataService.init = async function() {
           body: JSON.stringify(this.data),
         });
 
-        const result = await response.json();
-        if (!result.success) {
-          throw new Error(result.message || "API Error");
+        if (!response.ok) {
+          throw new Error("Unauthorized or API error");
         }
+
       } else {
         console.warn("No admin token found, only saved to LocalStorage");
       }
 
       return { success: true, message: "Data saved successfully" };
     } catch (error) {
-      console.error("Save failed:", error);
-      return { success: false, message: error.message };
-    }
+  alert("Kayıt başarısız: " + error.message);
+  return { success: false };
+}
+
   },
 };
 
