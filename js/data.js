@@ -1,5 +1,4 @@
-localStorage.removeItem("gourmet_data");
-localStorage.removeItem("gourmet_data_version");
+
 
 (function () {
   const DATA_VERSION = "1.0.10"; // ← BUNU ARTIR
@@ -366,20 +365,22 @@ const DataService = {
       }
     }
 
-    // Fallback to API (optional) or defaults
-      try {
-        const response = await fetch(this.apiUrl, { cache: "no-store" });
-        if (response.ok) {
-          const json = await response.json();
-          if (json.success) {
-            this.data = json.data;
-            console.log("Data loaded from API");
-            localStorage.setItem("gourmet_data", JSON.stringify(this.data));
-          }
-        }
-      } catch (error) {
-        console.warn("Failed to load data from API, using defaults.", error);
-      }
+DataService.init = async function() {
+  // temiz cache
+  localStorage.removeItem("gourmet_data");
+  localStorage.removeItem("__MENU_DATA_VERSION__");
+
+  try {
+    const res = await fetch(this.apiUrl, { cache: "no-store" });
+    const json = await res.json();
+    this.data = json.data;
+    localStorage.setItem("gourmet_data", JSON.stringify(this.data));
+    console.log("Data loaded from API");
+  } catch (err) {
+    console.warn("API load failed", err);
+  }
+};
+
     
     console.log("Data Service Initialized", this.data);
   },
