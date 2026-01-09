@@ -1,6 +1,6 @@
-/* ================================
-   MOBILE CACHE DATA FIX
-   ================================ */
+localStorage.removeItem("gourmet_data");
+localStorage.removeItem("gourmet_data_version");
+
 (function () {
   const DATA_VERSION = "1.0.10"; // ← BUNU ARTIR
   const STORAGE_KEY = "__MENU_DATA_VERSION__";
